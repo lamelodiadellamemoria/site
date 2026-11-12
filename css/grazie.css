@@ -1,0 +1,176 @@
+/* Pagina di grazie post-acquisto. Visuale della VSL/PWA:
+   fondo scuro, oro, Lora + Open Sans, mobile first 375. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html {
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  background: #0c0818;
+}
+body {
+  min-height: 100%;
+  min-height: 100dvh;
+  font-family: "Open Sans", Inter, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #f7f4ee;
+  background: #0c0818;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.page {
+  width: min(430px, 100%);
+  margin: 0 auto;
+  min-height: 100dvh;
+  padding: 20px 22px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 32px;
+}
+.marca img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+}
+.marca-nome {
+  font-family: Lora, Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.25;
+  color: #e4c56a;
+  margin: 0;
+}
+
+.titolo {
+  font-family: "Open Sans", Inter, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 28px;
+  color: #f7f4ee;
+}
+
+.passi {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+}
+.passi li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 0 16px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.passi li:last-child { margin-bottom: 0; }
+.passo-n {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: #3c30a7;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.btn-accedi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 56px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #f0c419;
+  color: #111;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  box-shadow: 0 0 24px rgba(240, 196, 25, 0.28);
+}
+.btn-accedi:hover, .btn-accedi:focus-visible { background: #ffd84a; color: #111; }
+.btn-accedi:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+.supporto {
+  margin: 24px 0 0;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #c5c0b6;
+}
+.supporto a {
+  color: #e4c56a;
+  text-decoration: underline;
+}
+
+.rodape {
+  margin-top: auto;
+  padding-top: 36px;
+  border-top: 1px solid rgba(247, 244, 238, 0.12);
+  text-align: center;
+  color: #9a9488;
+}
+.links-legali {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 0;
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+.links-legali li {
+  position: relative;
+  padding: 0 10px;
+}
+.links-legali li + li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 1px;
+  height: 12px;
+  background: #9a9488;
+}
+.links-legali a { color: #c5c0b6; text-decoration: none; }
+.links-legali a:hover, .links-legali a:focus-visible { text-decoration: underline; color: #f7f4ee; }
+.rodape-txt {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.rodape-avvertenza {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #9a9488;
+}
+
+@media (min-width: 431px) {
+  body {
+    background:
+      radial-gradient(ellipse 50% 40% at 50% 0%, rgba(60, 48, 167, 0.18), transparent 60%),
+      #07050f;
+  }
+  .page {
+    box-shadow: 0 0 0 1px rgba(247, 244, 238, 0.06), 0 20px 80px rgba(0, 0, 0, 0.45);
+    background: #0c0818;
+  }
+}

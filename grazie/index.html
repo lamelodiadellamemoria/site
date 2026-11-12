@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0c0818">
+  <title>Acquisto confermato — La Melodia della Memoria</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/grazie.css">
+  <script src="../js/config.js"></script>
+  <script src="../js/utm.js"></script>
+  <script src="../js/pixel.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="marca">
+      <img
+        src="../img/logo-disco.webp"
+        width="56"
+        height="56"
+        alt=""
+        fetchpriority="high"
+        decoding="async">
+      <p class="marca-nome">Benessere Ogni Giorno</p>
+    </header>
+
+    <!-- Copywriter: rivedere i testi di questa pagina (titolo, passi, supporto). -->
+    <h1 class="titolo">Il tuo acquisto è confermato</h1>
+
+    <ol class="passi">
+      <li><span class="passo-n">1</span><span>Apri l'app</span></li>
+      <li><span class="passo-n">2</span><span>Entra con l'email usata per l'acquisto</span></li>
+      <li><span class="passo-n">3</span><span>Ricevi il codice</span></li>
+    </ol>
+
+    <a class="btn-accedi" id="btn-accedi" data-app href="https://app.lamelodiadellamemoria.com/">Accedi ora</a>
+
+    <p class="supporto">Ti serve aiuto? Scrivi a <a data-support-email-href href="mailto:contatto@lamelodiadellamemoria.com"><span data-support-email>contatto@lamelodiadellamemoria.com</span></a>.</p>
+
+    <footer class="rodape">
+      <ul class="links-legali">
+        <li><a href="/privacy/">Informativa sulla privacy</a></li>
+        <li><a href="/cookie/">Cookie policy</a></li>
+        <li><a href="/termini/">Termini e condizioni</a></li>
+        <li><a href="/rimborsi/">Rimborsi e garanzia</a></li>
+        <li><a href="/note-legali/">Note legali</a></li>
+        <li><a href="/contatti/">Contatti</a></li>
+      </ul>
+      <p class="rodape-txt">Benessere Ogni Giorno, Roma, Italia. Contatti: contatto@lamelodiadellamemoria.com. Il pagamento è gestito da Hotmart B.V. (Amsterdam, Paesi Bassi), che agisce come agente commerciale per conto del venditore.</p>
+      <p class="rodape-txt rodape-avvertenza"><span data-product-name>La Melodia della Memoria</span> non è un dispositivo medico e non serve a diagnosticare, trattare, curare o prevenire alcuna malattia. Le informazioni di questa pagina hanno scopo divulgativo e non sostituiscono il parere del medico. I risultati possono variare da persona a persona. Questo sito non è affiliato a Rita Levi-Montalcini, alle istituzioni che portano il suo nome, al MIT, alle altre istituzioni né ai ricercatori citati. Sconsigliato in caso di epilessia o disturbi dell'udito; ascoltare a volume basso. Questo sito non fa parte di Facebook, Instagram o Meta Platforms, Inc. e non è approvato da Meta.</p>
+    </footer>
+  </main>
+  <script>
+    (function () {
+      var url = (typeof bsitAppUrl === 'function')
+        ? bsitAppUrl()
+        : (typeof APP_URL === 'string' ? APP_URL : 'https://app.lamelodiadellamemoria.com/');
+      if (typeof bsitMontarUrl === 'function') url = bsitMontarUrl(url);
+      var a = document.getElementById('btn-accedi');
+      if (a) a.href = url;
+      if (typeof bsitApplicareCampi === 'function') bsitApplicareCampi();
+    })();
+  </script>
+</body>
+</html>

@@ -8,6 +8,20 @@ var CHECKOUT_URL = 'https://pay.hotmart.com/O108456895I';
 /* Página da VSL. Os CTAs da ponte usam este caminho e levam a query. */
 var VSL_URL = '/video/';
 
+/* URL do app (PWA). Em producao: app.lamelodiadellamemoria.com.
+   Quando a pagina roda em localhost ou na LAN, o botao da grazie
+   aponta para o prototipo no PC (porta 5370). */
+var APP_URL = 'https://app.lamelodiadellamemoria.com/';
+
+function bsitAppUrl() {
+  var host = '';
+  try { host = String(location.hostname || ''); } catch (e) {}
+  var local = host === 'localhost' || host === '127.0.0.1' || host === '[::1]' ||
+    /^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/.test(host);
+  if (local) return 'http://192.168.1.4:5370/';
+  return APP_URL;
+}
+
 /* Preço de frente, decidido pelo Vini. Formato italiano, um só valor em todos os pontos.
    A página lê este valor via [data-price]. Não há preço anterior nem riscado. */
 var PRICE = '24,90 €';
