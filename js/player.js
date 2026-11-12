@@ -1,4 +1,4 @@
-/* Player da VSL v10h. Sem autoplay. preload="metadata". Uma só VSL visível.
+/* Player da VSL v10i. Sem autoplay. preload="metadata". Uma só VSL visível.
    Todos os textos da interface estão em italiano.
    O bloco de oferta e as seções [data-reveal] aparecem quando o tempo
    realmente assistido (currentTime avançado pela reprodução) chega a
@@ -9,7 +9,7 @@
    voltam ao máximo assistido). Sai da aba/janela: pausa e overlay de
    retorno; retoma no toque. pid=vsla2 (SHOW_CTA_PARAM) mostra na hora,
    como a variante de campanha do original. Sem ?cta e sem ?mostra-cta.
-   As legendas .vtt antigas não são ligadas: o MP4 v10h já as traz queimadas. */
+   As legendas .vtt antigas não são ligadas: o MP4 (v10i, mesmo áudio da v10h) já as traz queimadas. */
 (function () {
   var VIDEO_SEL = 'video[data-lab-vsl]';
   var SEEK_SLACK = 1.25;
@@ -34,7 +34,7 @@
   }
 
   function watchVersion() {
-    return window.BSIT_VSL_WATCH_VERSION || 'v10h';
+    return window.BSIT_VSL_WATCH_VERSION || 'v10i';
   }
 
   function lerWatch() {
@@ -100,7 +100,7 @@
       else el.setAttribute('hidden', '');
     });
     /* Não liga faixas .vtt: os tempos são da montagem anterior (~37 min) e o
-       MP4 v10h já tem as legendas queimadas no quadro. */
+       MP4 v10i já tem as legendas queimadas no quadro. */
     video.querySelectorAll('track').forEach(function (track) {
       track.removeAttribute('default');
       try { if (track.track) track.track.mode = 'disabled'; } catch (e) {}

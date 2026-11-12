@@ -57,7 +57,7 @@ var CTA_DELAY_SECONDS = 744;
 
 /* Chave do progresso assistido da VSL (tempo máximo visto + flags de reveal). */
 var BSIT_VSL_WATCH_KEY = 'bsitVslWatch';
-var BSIT_VSL_WATCH_VERSION = 'v10h';
+var BSIT_VSL_WATCH_VERSION = 'v10i';
 
 /* Cookie legado (bsitRepeatVSL). Não libera mais o botão sozinho: o reveal
    segue o tempo assistido no localStorage. Mantido só por compatibilidade. */
@@ -70,7 +70,7 @@ var REPEAT_COOKIE_DAYS = 1;
 var SHOW_CTA_PARAM = 'pid';
 var SHOW_CTA_VALUE = 'vsla2';
 
-/* Fonte do player: VSL v10h (marca, 16:9). Sem autoplay. preload metadata.
+/* Fonte do player: VSL v10i (mesma duração e áudio da v10h, 16:9). Sem autoplay. preload metadata.
    Pode ser caminho relativo à página /video/ ou URL absoluta https://...
    O player aplica este valor no <source> e não define crossorigin, para o
    streaming em host externo (Range) não quebrar por CORS. */
@@ -80,7 +80,7 @@ var VIDEO_SRC = VSL_VIDEO_SRC;
 var VIDEO_POSTER = VSL_POSTER;
 
 /* Nome da versão da VSL no painel (data-lab-vsl). VSL nova, nome novo. */
-var VSL_NAME = 'vsl-it-v10h';
+var VSL_NAME = 'vsl-it-v10i';
 
 /* Chave do localStorage da query (isolada desta oferta; TTL 7 dias). */
 var BSIT_STORAGE_KEY = 'bsit_qs';
@@ -111,6 +111,10 @@ var COMPANY_NAME = '';
 var VAT_NUMBER = '';
 var COMPANY_ADDRESS = '';
 var PRIVACY_EMAIL = '';
+/* Única flag do slot .faixa-logos / [data-reserved="source-logos"].
+   false = escondido. Não ligar sem cessão de uso dos logotipos.
+   Se a flag for ligada, os itens continuam só visuais: bsitDeslinkarLogos()
+   troca qualquer <a> interno por <span> (sem href, sem click). */
 var SHOW_SOURCE_LOGOS = false;
 var SHOW_SOCIAL_PROOF = false;
 
@@ -267,6 +271,25 @@ function bsitApplicareContatto() {
   }
 }
 
+function bsitDeslinkarLogos() {
+  if (!document.querySelectorAll) return;
+  var slots = document.querySelectorAll('[data-reserved="source-logos"], .faixa-logos');
+  Array.prototype.forEach.call(slots, function (slot) {
+    var links = slot.querySelectorAll('a');
+    Array.prototype.forEach.call(links, function (a) {
+      var span = document.createElement('span');
+      if (a.className) span.className = a.className;
+      if (a.id) span.id = a.id;
+      var title = a.getAttribute('title');
+      if (title) span.setAttribute('title', title);
+      var aria = a.getAttribute('aria-label');
+      if (aria) span.setAttribute('aria-label', aria);
+      while (a.firstChild) span.appendChild(a.firstChild);
+      if (a.parentNode) a.parentNode.replaceChild(span, a);
+    });
+  });
+}
+
 function bsitApplicareEditoria() {
   if (!document.querySelectorAll) return;
   var map = {
@@ -312,6 +335,8 @@ function bsitApplicareEditoria() {
       }
     });
   });
+
+  bsitDeslinkarLogos();
 
   var flags = {
     'source-logos': SHOW_SOURCE_LOGOS === true,

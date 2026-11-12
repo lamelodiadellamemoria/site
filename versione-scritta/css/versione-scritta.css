@@ -24,7 +24,7 @@ figure { margin: 0; }
 li { list-style: none; }
 a { text-decoration: none; }
 sup { font-size: 12px; line-height: 12px; color: #939393; }
-sup a { color: #939393; }
+sup a, sup .cit-ref { color: #939393; cursor: default; text-decoration: none; }
 
 .ovrfl { overflow: hidden; }
 .wrap {
@@ -68,7 +68,7 @@ sup a { color: #939393; }
 .blocco strong { font-weight: 700; }
 
 /* citações de referência */
-.blocco a[href^="#ref"] { color: #939393; }
+.blocco a[href^="#ref"], .blocco .cit-ref { color: #939393; cursor: default; text-decoration: none; }
 
 /* mãozinha apontando: inline, não bloco */
 .img-hand, figure.fig-hand {
@@ -794,7 +794,7 @@ ol.riferimenti li::before {
   font-size: 12px;
   color: #333;
 }
-ol.riferimenti a { color: #0b509d; text-decoration: underline; word-break: break-all; }
+ol.riferimenti a, ol.riferimenti .ref-url { color: #333; text-decoration: none; cursor: default; word-break: break-all; }
 
 /* ---------- rodapé ---------- */
 footer.blocco[data-blocco="34"] {
