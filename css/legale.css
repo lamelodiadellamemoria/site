@@ -1,0 +1,65 @@
+/* Páginas legais e o marcador de checkout. Mobile first, sem menu. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #181822;
+  background: #fff;
+  line-height: 1.55;
+}
+.page {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+.sito { font-size: 14px; color: #666; margin: 0 0 8px; }
+h1 { font-size: 28px; line-height: 1.2; margin: 0 0 16px; }
+h2 { font-size: 18px; margin: 24px 0 8px; }
+p, li { font-size: 16px; }
+p { margin: 0 0 12px; }
+ul { margin: 0 0 12px; padding-left: 1.2em; }
+.marcador-campo {
+  display: inline;
+  border-bottom: 1px dashed #999;
+  background: #f7f7f9;
+  padding: 0 4px;
+}
+.rodape {
+  background: #f3f3f2;
+  padding: 24px 16px 32px;
+  text-align: center;
+  font-size: 13px;
+}
+.links-legali {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+}
+.links-legali a { color: #000; }
+.checkout-box {
+  border: 1px dashed #c5c8d0;
+  background: #fafafa;
+  padding: 20px 16px;
+  margin: 16px 0;
+  word-break: break-all;
+}
+.checkout-box code { font-size: 14px; }
+.avviso {
+  padding: 12px 14px;
+  background: #fff6e5;
+  border: 1px solid #efd8a8;
+  margin: 0 0 16px;
+}
+@media (min-width: 768px) {
+  h1 { font-size: 34px; }
+  .page { padding: 40px 24px 64px; }
+}
+
+[hidden], .nota-interna {
+  display: none !important;
+}
+.page, .rodape, a { overflow-wrap: anywhere; word-break: break-word; }

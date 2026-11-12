@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>«Il nome che non ti viene in mente non è solo colpa dell'età» · La Melodia della Memoria</title>
+  <meta name="description" content="Guarda il video: perché il ricordo resta lì ma fa fatica a tornare, e una routine di ascolto di 15 minuti al giorno da fare a casa, con le cuffie.">
+  <link rel="icon" href="../img/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" href="../img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/video.css">
+  <script src="../js/config.js"></script>
+  <script src="../js/utm.js"></script>
+  <script src="../js/pixel.js"></script>
+</head>
+<body>
+  <header class="vsl-hero">
+    <picture class="vsl-hero-bg" aria-hidden="true">
+      <source type="image/avif" srcset="../img/vsl-hero-800.avif 800w, ../img/vsl-hero-1200.avif 1200w" sizes="100vw">
+      <source type="image/webp" srcset="../img/vsl-hero-800.webp 800w, ../img/vsl-hero-1200.webp 1200w" sizes="100vw">
+      <img src="../img/vsl-hero-1200.webp" alt="" width="1200" height="680" fetchpriority="high" decoding="async">
+    </picture>
+    <p class="vsl-occhiello" data-expert-mode="bellini" hidden>Il dottor Marco Bellini, neurologo, spiega:</p>
+    <p class="vsl-occhiello" data-expert-mode="marca">Per chi ha passato i 50 anni</p>
+    <h1 class="vsl-titolo">
+      <span class="riga-1">«Il nome che non ti viene in mente non è solo colpa dell'età»</span>
+      <span class="riga-2" data-expert-mode="bellini" hidden><span class="evidenza">Per chi ha passato i 50 anni. Guarda il video: perché il ricordo resta lì ma fa fatica a tornare, e una routine di ascolto di 15 minuti al giorno da fare a casa, con le cuffie.</span></span>
+      <span class="riga-2" data-expert-mode="marca"><span class="evidenza">Guarda il video: perché il ricordo resta lì ma fa fatica a tornare, e una routine di ascolto di 15 minuti al giorno da fare a casa, con le cuffie.</span></span>
+    </h1>
+
+    <div class="vsl-player" data-vsl-player>
+      <div class="vsl-frame">
+        <video
+          data-lab-vsl="vsl-it-v10h"
+          playsinline
+          preload="metadata"
+          poster="../img/vsl-poster.webp"
+          controlslist="nodownload noplaybackrate noremoteplayback"
+          disablepictureinpicture
+          disableremoteplayback>
+          <source src="../media/brainsong_it_vsl_v10h-marca_16x9.mp4" type="video/mp4">
+        </video>
+        <div class="vsl-loading" data-vsl-loading hidden>Caricamento in corso…</div>
+        <button type="button" class="vsl-play" data-vsl-play>
+          <span class="vsl-play-icon" aria-hidden="true"></span>
+          <span class="vsl-play-label">Riproduci</span>
+        </button>
+        <div class="vsl-volume" data-vsl-volume-dock>
+          <button type="button" class="vsl-volume-btn" data-vsl-mute aria-label="Disattiva il suono">
+            <svg class="vsl-volume-icon is-on" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4 9v6h3.2L14 21V3L7.2 9H4zm11.5 3c0-1.8-1-3.3-2.5-4.1v8.2c1.5-.8 2.5-2.3 2.5-4.1z"/>
+              <path d="M15.5 3.8v2.1c2.9.9 5 3.6 5 6.8s-2.1 5.9-5 6.8v2.1c4-1 7-4.6 7-8.9s-3-7.9-7-8.9z"/>
+            </svg>
+            <svg class="vsl-volume-icon is-off" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4 9v6h3.2L14 21V3L7.2 9H4z"/>
+              <path d="M16.5 9.5l1.4-1.4 1.4 1.4 1.4-1.4 1.4 1.4-1.4 1.4 1.4 1.4-1.4 1.4-1.4-1.4-1.4 1.4-1.4-1.4 1.4-1.4-1.4-1.4z"/>
+            </svg>
+          </button>
+          <input type="range" class="vsl-volume-slider" data-vsl-volume min="0" max="1" step="0.01" value="1" aria-label="Volume">
+        </div>
+        <button type="button" class="vsl-esci-pieno" data-vsl-esci-pieno hidden aria-label="Chiudi lo schermo intero">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.2 6.2l11.6 11.6M17.8 6.2L6.2 17.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button type="button" class="vsl-retorno" data-vsl-retorno hidden>
+          <span class="vsl-retorno-msg">Il video è in pausa. Premi qui per riprendere.</span>
+        </button>
+      </div>
+    </div>
+    <p class="hint-cuffie">Alza il volume o metti le cuffie per sentire bene.</p>
+  </header>
+
+  <section class="faixa faixa-istituzioni" aria-label="Istituzioni delle ricerche citate">
+    <p class="studi-citati">Le ricerche citate nel video sono state condotte al Massachusetts Institute of Technology (Cambridge, Stati Uniti), al Rush Alzheimer's Disease Center (Chicago), al Karolinska Institutet (Stoccolma) e all'Università di Leida (Paesi Bassi).</p>
+    <p class="garanzia-riga">Soddisfatti o rimborsati per <span data-guarantee-days>30</span> giorni</p>
+    <div class="faixa-pagamenti" data-requires="payment-methods" hidden></div>
+    <div class="faixa-logos" data-reserved="source-logos" hidden>
+      <!-- Slot per loghi delle fonti. Resta nascosto mentre SHOW_SOURCE_LOGOS è false.
+           Non inserire marchi (Frontiers, Oxford, NASA, JNeurosci, Harvard, ClickBank, ecc.) senza cessione d'uso. -->
+    </div>
+  </section>
+
+    <aside class="chi-ti-parla" data-expert-mode="bellini" hidden aria-label="Chi ti parla nel video">
+      <h2 class="chi-ti-parla-titolo">Chi ti parla nel video</h2>
+      <div class="chi-ti-parla-corpo">
+        <img
+          class="chi-ti-parla-foto"
+          data-field="expert-photo"
+          data-requires="expert-photo"
+          width="528"
+          height="660"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          hidden>
+        <div class="chi-ti-parla-testo">
+          <p>Sono Marco Bellini, medico neurologo. Mi appassiona il funzionamento del cervello e il modo in cui la memoria influenza la vita di tutti i giorni. Nel mio percorso ho dedicato i miei studi alla salute cognitiva, in particolare alle difficoltà di memoria, concentrazione e attenzione che possono comparire con il passare degli anni.</p>
+          <p>Credo che prendersi cura della salute del cervello vada ben oltre il trattare i sintomi: piccole abitudini, una routine equilibrata e un accompagnamento adeguato possono fare la differenza nella qualità della vita. Il mio obiettivo è aiutare le persone a capire meglio come funziona la mente e quanto sia importante preservare la salute del cervello in ogni fase della vita.</p>
+          <p>Nel video ti spiego le ricerche da cui è nata La Melodia della Memoria, con le fonti una per una.</p>
+          <p class="chi-ti-parla-firma">Dott. Marco Bellini · Neurologo</p>
+        </div>
+      </div>
+      <p class="chi-ti-parla-collab" data-requires="company-name" hidden>Il dott. Marco Bellini collabora con <span data-field="company-name"></span>, che vende La Melodia della Memoria.</p>
+    </aside>
+
+
+    <!-- Abertura escolhida (Levi-Montalcini). Sem foto: não há licença verificada.
+         A alternativa (famiglia) fica pronta atrás de VSL_OPENING='famiglia' em config.js.
+         Textos e tempos da VSL aguardam o vsl.md final. -->
+    <aside class="vsl-apertura" data-vsl-opening="levi-montalcini">
+      <p class="apertura-kicker">Rita Levi-Montalcini, 1909–2012</p>
+      <p class="apertura-fonti">Fonti: Treccani, Enciclopedia Italiana; «È morta Rita Levi Montalcini», la Repubblica, 30 dicembre 2012.</p>
+    </aside>
+    <aside class="vsl-apertura" data-vsl-opening="famiglia" hidden>
+      <p class="apertura-kicker">Una scena di famiglia</p>
+      <p>Domenica, a pranzo: un nome che non torna. Se ti è successo, questo video è per te.</p>
+      <p class="apertura-disclaimer nota-interna" hidden>Questa è l'apertura alternativa, senza una figura pubblica. Si attiva in config.js con VSL_OPENING = 'famiglia'.</p>
+    </aside>
+
+  <!-- Striscia sotto il player: compare insieme al blocco dell'offerta, al tempo configurato. -->
+  <aside class="striscia-offerta is-hidden" data-reveal aria-label="Offerta in sintesi">
+    <p><span data-price-reveal class="is-hidden"><strong data-price>24,90 €</strong> · </span>pagamento unico, IVA inclusa · Soddisfatti o rimborsati per <span data-guarantee-days>30</span> giorni</p>
+    <a class="cta-acquisto cta-striscia" href="https://pay.hotmart.com/O108456895I" data-checkout>Vai al pagamento sicuro →</a>
+  </aside>
+  <script>bsitAplicarLinks();</script>
+
+  <section class="sezione is-hidden" data-reveal id="come-funziona">
+    <div class="sezione-interno">
+      <h2>Il ricordo c'è. È il richiamo che fa fatica.</h2>
+      <p>La memoria funziona come un archivio: prima metti via, poi ritrovi. Dopo i 50, spesso il nome è ancora nel cassetto. È il momento del richiamo che si inceppa.</p>
+      <p>La ricerca collega una proteina del cervello, il BDNF, a una memoria che regge nel tempo: in uno studio su 535 persone anziane, il BDNF è stato misurato nel tessuto cerebrale donato dopo la morte, e chi ne aveva di più aveva perso memoria e lucidità più lentamente negli anni precedenti. (Buchman et al., Neurology, 2016)</p>
+      <p>Al MIT, nel 2019, un suono a 40 impulsi al secondo, ascoltato un'ora al giorno per una settimana, ha migliorato alcuni test di memoria in topi di laboratorio allevati per avere problemi di memoria. Nel 2022 uno studio sulle persone ha provato luce e suono a 40 impulsi su quindici pazienti con demenza lieve: il trattamento si è dimostrato sicuro e ha dato un primo segnale positivo in un test di memoria. (Martorell et al., Cell, 2019; Chan et al., PLoS One, 2022)</p>
+      <p>Da questi studi è partita la nostra idea, e da qui è nata <span data-product-name>La Melodia della Memoria</span>: un suono con un ritmo preciso, da ascoltare ogni giorno, alla stessa ora. Non è una medicina: è un'abitudine.</p>
+    </div>
+  </section>
+
+  <section class="sezione is-hidden" data-reveal id="cosa-ricevi">
+    <div class="sezione-interno">
+      <h2>15 minuti al giorno, con quello che hai già in casa</h2>
+      <ol class="passi">
+        <li><strong>La traccia <span data-product-name="di">della Melodia della Memoria</span> (15 minuti).</strong> All'inizio una voce in italiano ti dice cosa fare. Poi una musica calma con un ritmo regolare. Alla fine la voce ti dice che hai finito. La ascolti dal telefono o dal computer, con le cuffie che hai già.</li>
+        <li><strong>La guida «Come usarla».</strong> Come scegliere il momento della giornata, che volume tenere, cosa fare se salti un giorno.</li>
+        <li><strong>Il calendario di 4 settimane.</strong> Ventotto caselle, una al giorno: ogni sera ne segni una. Così l'ascolto diventa un'abitudine, come il caffè del mattino.</li>
+      </ol>
+      <p>Come si usa, in tre passi: ti siedi · metti le cuffie e premi play · dopo 15 minuti hai finito.</p>
+      <p><a class="cta-acquisto" href="https://pay.hotmart.com/O108456895I" data-checkout>Vai al pagamento sicuro →</a></p>
+    </div>
+  </section>
+
+  <!-- Unico blocco principale di acquisto. Nascosto fino al tempo configurato in config.js (CTA_DELAY_SECONDS).
+       Teste: ?mostra-cta=1 mostra na hora; ?cta=N altera o delay; pid=vsla2 (configurável) mostra na hora. -->
+  <section class="offerta is-hidden" id="offerta" aria-label="Offerta">
+    <div class="offerta-interno">
+      <h2 class="offerta-titolo">Comincia oggi la tua routine di 15 minuti</h2>
+      <p class="offerta-sottotitolo">Soddisfatti o rimborsati per <span data-guarantee-days>30</span> giorni</p>
+      <span class="offerta-freccia" aria-hidden="true">
+        <svg viewBox="0 0 48 28" xmlns="http://www.w3.org/2000/svg"><path d="M24 28L0 0h48L24 28z"/></svg>
+      </span>
+      <div class="offerta-corpo">
+        <div class="offerta-prodotto" data-requires="product-image" hidden>
+          <img data-field="product-image" width="720" height="720" alt="" loading="lazy" hidden>
+        </div>
+        <ul class="offerta-lista">
+          <li>Pagamento unico, niente abbonamento</li>
+          <li>Accesso via email dopo il pagamento</li>
+          <li>Da ascoltare a casa, con le tue cuffie</li>
+          <li>La traccia audio <span data-product-name="di">della Melodia della Memoria</span>, 15 minuti, da ascoltare dal telefono o dal computer, tutte le volte che vuoi.</li>
+          <li>La guida «Come usarla», in italiano, con il calendario di 4 settimane da segnare giorno per giorno.</li>
+        </ul>
+      </div>
+      <div class="prezzo-box is-hidden" data-price-reveal>
+        <p class="prezzo-valore" data-price>24,90 €</p>
+        <p class="prezzo-nota">IVA inclusa · pagamento unico</p>
+      </div>
+      <a class="cta-acquisto" href="https://pay.hotmart.com/O108456895I" data-checkout id="cta-acquisto">Vai al pagamento sicuro →</a>
+      <p class="checkout-nota">Si apre la pagina di pagamento sicura di <span data-platform>Hotmart</span>, la piattaforma che gestisce l'ordine. <span data-requires="payment-methods">Puoi pagare con <span data-field="payment-methods"></span>. </span>Appena il pagamento è confermato, ricevi l'accesso via email.</p>
+      <script>bsitAplicarLinks();</script>
+    </div>
+  </section>
+
+  <section class="sezione garanzia is-hidden" data-reveal id="garanzia">
+    <div class="sezione-interno">
+      <h2>Provala <span data-guarantee-days>30</span> giorni senza rischi</h2>
+      <p>Ascolta <span data-product-name>La Melodia della Memoria</span> ogni giorno, segui il calendario e decidi con calma. Non importa quante volte l'avrai ascoltata: se entro <span data-guarantee-days>30</span> giorni dall'acquisto non fa per te, chiedi il rimborso e ti torna ogni centesimo. Il rischio è tutto nostro.</p>
+      <ol class="passi">
+        <li>Vai su <a href="https://refund.hotmart.com" rel="noopener noreferrer" target="_blank">refund.hotmart.com</a>.</li>
+        <li>Inserisci il codice dell'acquisto: lo trovi nell'email di conferma di Hotmart e comincia con due lettere (per esempio HP).</li>
+        <li>Conferma la richiesta con il codice di verifica che ricevi all'indirizzo email usato per l'acquisto.</li>
+      </ol>
+      <p>Preferisci che lo facciamo noi per te? <span data-requires="support-email">Scrivi a <a data-support-email-href href=""><span data-support-email></span></a> dall'indirizzo email usato per l'acquisto:</span> apriamo noi la richiesta su Hotmart, e ricevi da Hotmart l'email di conferma. Il rimborso arriva sullo stesso metodo di pagamento, nei tempi previsti da quel metodo.</p>
+      <a class="cta-acquisto" href="https://pay.hotmart.com/O108456895I" data-checkout>Vai al pagamento sicuro →</a>
+    </div>
+  </section>
+
+  <section class="sezione faq is-hidden" data-reveal id="faq">
+    <div class="sezione-interno">
+      <h2>Domande frequenti</h2>
+      <dl>
+        <dt>È come un integratore?</dt>
+        <dd>No, non si ingoia niente: è un ascolto di 15 minuti. Se prendi già integratori o farmaci puoi continuare: <span data-product-name>La Melodia della Memoria</span> si aggiunge, non toglie niente.</dd>
+        <dt>Come si usa?</dt>
+        <dd>Una volta al giorno, possibilmente alla stessa ora. Ti siedi, metti le cuffie, tieni il volume basso e premi play. Dopo 15 minuti hai finito.</dd>
+        <dt>E se salto un giorno?</dt>
+        <dd>Nessun problema: riprendi il giorno dopo. Nel calendario segni i giorni di ascolto, l'importante è tornare all'abitudine.</dd>
+        <dt>Dopo quanto tempo noto qualcosa?</dt>
+        <dd>Ognuno è diverso. Ti chiediamo di ascoltarla ogni giorno per le 4 settimane del calendario. Intanto la provi senza rischi: se entro 30 giorni non fa per te, ti torna ogni centesimo.</dd>
+        <dt>La trovo anche su YouTube?</dt>
+        <dd>Su YouTube trovi tanti suoni, ma non questo: <span data-product-name>La Melodia della Memoria</span> è in italiano, ha una voce che ti guida, dura 15 minuti esatti e arriva con la guida e il calendario. E se non ti convince, entro 30 giorni ti torna ogni centesimo.</dd>
+        <dt>Mi serve un'app o un telefono particolare?</dt>
+        <dd>No. Basta un telefono o un computer con internet e un paio di cuffie qualsiasi. Apri il link dell'email e premi play. La ascolti tutte le volte che vuoi.</dd>
+        <dt>Come ricevo l'accesso?</dt>
+        <dd>Via email: di solito la ricevi pochi minuti dopo la conferma del pagamento. Se non trovi l'email, guarda nella cartella spam o scrivi a <a data-support-email-href href=""><span data-support-email>contatto@lamelodiadellamemoria.com</span></a>.</dd>
+        <dt>Il pagamento è unico?</dt>
+        <dd>Sì. Paghi <span data-price>24,90 €</span> una volta sola, IVA inclusa. Nessun abbonamento e nessun addebito successivo.</dd>
+        <dt>Come chiedo il rimborso?</dt>
+        <dd>Entro <span data-guarantee-days>30</span> giorni dall'acquisto, su <a href="https://refund.hotmart.com" rel="noopener noreferrer" target="_blank">refund.hotmart.com</a>, con il codice dell'acquisto che trovi nell'email di conferma di Hotmart. <span data-requires="support-email">Oppure scrivi a <a data-support-email-href href=""><span data-support-email></span></a> e facciamo noi la richiesta su Hotmart per te.</span> Ti torna ogni centesimo, sullo stesso metodo di pagamento.</dd>
+      </dl>
+      <a class="cta-acquisto" href="https://pay.hotmart.com/O108456895I" data-checkout>Vai al pagamento sicuro →</a>
+    </div>
+  </section>
+
+
+  <section class="riferimenti" id="fonti-video">
+    <div class="riferimenti-interno">
+      <h2>Le fonti citate nel video</h2>
+      <p><strong>Cosa dice la ricerca, in breve</strong></p>
+      <ul>
+        <li>In uno studio pubblicato su Neurology su 535 persone anziane, chi aveva più BDNF nel tessuto del cervello aveva perso memoria e lucidità più lentamente negli anni precedenti.</li>
+        <li>In uno studio svedese su persone sane tra i 65 e i 75 anni, dopo l'attività fisica il BDNF nel sangue saliva, e chi aveva l'aumento più grande imparava meglio negli esercizi fatti subito dopo.</li>
+        <li>Al MIT, un suono a 40 impulsi al secondo, un'ora al giorno per una settimana, ha migliorato alcuni test di memoria in topi di laboratorio. Nel 2022, su 15 pazienti con demenza lieve, luce e suono a 40 impulsi si sono dimostrati sicuri e hanno dato un primo segnale positivo in un test di memoria.</li>
+      </ul>
+      <p>È da qui che è partita la nostra idea: un ritmo preciso, ascoltato ogni giorno, come abitudine. Non ti chiediamo di fidarti di un titolo: le fonti sono qui sotto, una per una.</p>
+      <h3>Per chi l'abbiamo fatta</h3>
+      <p>Se ti capita di cercare il nome di un attore che conosci benissimo, di entrare in cucina e non ricordare più cosa dovevi prendere, di perdere il filo a metà frase mentre racconti qualcosa ai nipoti: l'abbiamo fatta per te. Quindici minuti al giorno, a casa, con le cuffie che hai già.</p>
+      <h3>E se non fa per te</h3>
+      <p>Hai <span data-guarantee-days>30</span> giorni dall'acquisto per provarla senza rischi. Se non fa per te, chiedi il rimborso tramite <span data-platform>Hotmart</span> e ti torna ogni centesimo. Il rischio è tutto nostro.</p>
+      <ol class="ref-list fonti-video">
+        <li>Rita Levi-Montalcini: biografia. Treccani, Enciclopedia Italiana. <a href="https://www.treccani.it/enciclopedia/rita-levi-montalcini_(Enciclopedia-Italiana)/" rel="noopener noreferrer" target="_blank">https://www.treccani.it/enciclopedia/rita-levi-montalcini_(Enciclopedia-Italiana)/</a></li>
+        <li>«È morta Rita Levi Montalcini. Premio Nobel e senatore a vita, aveva 103 anni». la Repubblica, 30 dicembre 2012. <a href="https://www.repubblica.it/scienze/2012/12/30/news/morta_rita_levi_montalcini-49677532/" rel="noopener noreferrer" target="_blank">https://www.repubblica.it/scienze/2012/12/30/news/morta_rita_levi_montalcini-49677532/</a></li>
+        <li>Neurotrofine (NGF e BDNF). Treccani, Dizionario di Medicina. <a href="https://www.treccani.it/enciclopedia/neurotrofine_%28Dizionario-di-Medicina%29/" rel="noopener noreferrer" target="_blank">https://www.treccani.it/enciclopedia/neurotrofine_%28Dizionario-di-Medicina%29/</a></li>
+        <li>Sun F.W. et al. «Youthful Brains in Older Adults: Preserved Neuroanatomy in the Default Mode and Salience Networks Contributes to Youthful Memory in Superaging». The Journal of Neuroscience, 2016; 36(37): 9659-9668. <a href="https://doi.org/10.1523/JNEUROSCI.1492-16.2016" rel="noopener noreferrer" target="_blank">https://doi.org/10.1523/JNEUROSCI.1492-16.2016</a></li>
+        <li>Brown R., McNeill D. «The "tip of the tongue" phenomenon». Journal of Verbal Learning and Verbal Behavior, 1966; 5(4): 325-337. <a href="https://doi.org/10.1016/S0022-5371(66)80040-3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/S0022-5371(66)80040-3</a></li>
+        <li>Glazachev O.S. et al. «Repeated hyperthermia exposure increases circulating Brain Derived Neurotrophic Factor levels which is associated with improved quality of life, and reduced anxiety: A randomized controlled trial». Journal of Thermal Biology, 2020; 89: 102482. <a href="https://doi.org/10.1016/j.jtherbio.2019.102482" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.jtherbio.2019.102482</a></li>
+        <li>Pardridge W.M. «The blood-brain barrier: Bottleneck in brain drug development». NeuroRx, 2005; 2(1): 3-14. <a href="https://doi.org/10.1602/neurorx.2.1.3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1602/neurorx.2.1.3</a></li>
+        <li>Buchman A.S. et al. «Higher brain BDNF gene expression is associated with slower cognitive decline in older adults». Neurology, 2016; 86(8): 735-741. <a href="https://doi.org/10.1212/WNL.0000000000002387" rel="noopener noreferrer" target="_blank">https://doi.org/10.1212/WNL.0000000000002387</a></li>
+        <li>Miranda M. et al. «Brain-Derived Neurotrophic Factor: A Key Molecule for Memory in the Healthy and the Pathological Brain». Frontiers in Cellular Neuroscience, 2019; 13: 363. <a href="https://doi.org/10.3389/fncel.2019.00363" rel="noopener noreferrer" target="_blank">https://doi.org/10.3389/fncel.2019.00363</a></li>
+        <li>Bathina S., Das U.N. «Brain-derived neurotrophic factor and its clinical implications». Archives of Medical Science, 2015; 11(6): 1164-1178. <a href="https://doi.org/10.5114/aoms.2015.56342" rel="noopener noreferrer" target="_blank">https://doi.org/10.5114/aoms.2015.56342</a></li>
+        <li>Nilsson J. et al. «Acute increases in brain-derived neurotrophic factor in plasma following physical exercise relates to subsequent learning in older adults». Scientific Reports, 2020; 10: 4395. <a href="https://doi.org/10.1038/s41598-020-60124-0" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41598-020-60124-0</a></li>
+        <li>Martorell A.J. et al. «Multi-sensory Gamma Stimulation Ameliorates Alzheimer's-Associated Pathology and Improves Cognition». Cell, 2019; 177(2): 256-271. <a href="https://doi.org/10.1016/j.cell.2019.02.014" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.cell.2019.02.014</a></li>
+        <li>Chan D. et al. «Gamma frequency sensory stimulation in mild probable Alzheimer's dementia patients: Results of feasibility and pilot studies». PLoS One, 2022; 17(12): e0278412. <a href="https://doi.org/10.1371/journal.pone.0278412" rel="noopener noreferrer" target="_blank">https://doi.org/10.1371/journal.pone.0278412</a></li>
+      </ol>
+      <p class="riferimenti-nota">Queste sono le ricerche da cui è nata <span data-product-name>La Melodia della Memoria</span>: per ognuna trovi autori, rivista e anno, così puoi controllarla da te.</p>
+    </div>
+  </section>
+
+  <section class="riferimenti" id="riferimenti">
+    <div class="riferimenti-interno">
+      <h2>Riferimenti scientifici</h2>
+      <p class="riferimenti-nota">Elenco delle fonti citate nell'originale, nello stesso ordine.</p>
+      <ol class="ref-list">
+        <li>Sun, F. W., Stepanovic, M. R., Andreano, J., Barrett, L. F., Touroutoglou, A., &amp; Dickerson, B. C. (2016). Youthful Brains in Older Adults: Preserved Neuroanatomy in the Default Mode and Salience Networks Contributes to Youthful Memory in Superaging. The Journal of neuroscience: the official journal of the Society for Neuroscience, 36(37), 9659–9668. <a href="https://doi.org/10.1523/JNEUROSCI.1492-16.2016" rel="noopener noreferrer" target="_blank">https://doi.org/10.1523/JNEUROSCI.1492-16.2016</a></li>
+        <li>Bathina, S., &amp; Das, U. N. (2015). Brain-derived neurotrophic factor and its clinical implications. Archives of medical science : AMS, 11(6), 1164–1178. <a href="https://doi.org/10.5114/aoms.2015.56342" rel="noopener noreferrer" target="_blank">https://doi.org/10.5114/aoms.2015.56342</a></li>
+        <li>Miranda, M., Morici, J. F., Zanoni, M. B., &amp; Bekinschtein, P. (2019). Brain-Derived Neurotrophic Factor: A Key Molecule for Memory in the Healthy and the Pathological Brain. Frontiers in cellular neuroscience, 13, 363. <a href="https://doi.org/10.3389/fncel.2019.00363" rel="noopener noreferrer" target="_blank">https://doi.org/10.3389/fncel.2019.00363</a></li>
+        <li>Yang, T., Nie, Z., Shu, H., Kuang, Y., Chen, X., Cheng, J., ... &amp; Liu, H. (2020). The role of BDNF on neural plasticity in depression. Frontiers in cellular neuroscience, 14, 82.</li>
+        <li>Zhang, X., Feng, D., Barry, D., &amp; Li, J. (2024). Closed-loop control of gamma oscillations in the brain connections through the transcranial stimulations. arXiv preprint arXiv:2403.06794</li>
+        <li>Collins, E. M. (2018). Super Ager: You Can Look Younger, Have More Energy, a Better Memory, and Live a Long and Healthy Life. Mango Media Inc.</li>
+        <li>Bekinschtein, P., Cammarota, M., Katche, C., Slipczuk, L., Rossato, J. I., Goldin, A., Izquierdo, I., &amp; Medina, J. H. (2008). BDNF is essential to promote persistence of long-term memory storage. Proceedings of the National Academy of Sciences of the United States of America, 105(7), 2711–2716. <a href="https://doi.org/10.1073/pnas.0711863105" rel="noopener noreferrer" target="_blank">https://doi.org/10.1073/pnas.0711863105</a></li>
+        <li>Suppa, A., &amp; Cheeran, B. (2014). Further insights into the effect of BDNF genotype on non-invasive brain stimulation. Clinical Neurophysiology: Official Journal of the International Federation of Clinical Neurophysiology, 126(7), 1281-1283.</li>
+        <li>Schmidt, M. A., &amp; Goodwin, T. J. (2014, January). Protecting Neural Structures and Cognitive Function During Prolonged Space Flight by Targeting the Brain Derived Neurotrophic Factor Molecular Network. In 2015 NASA Human Research Program Investigators''Workshop (HRP IWS 2015) (No. JSC-CN-32241).</li>
+        <li>Solan, M. (2022, September 1). The mental powers of super-agers. Harvard Health. <a href="https://www.health.harvard.edu/mind-and-mood/the-mental-powers-of-super-agers" rel="noopener noreferrer" target="_blank">https://www.health.harvard.edu/mind-and-mood/the-mental-powers-of-super-agers</a></li>
+        <li>Super-agers: This Special Group of older adults suggests you can keep your brain young and spry. Harvard Health. (2017, July 5). <a href="https://www.health.harvard.edu/blog/super-agers-this-special-group-of-older-adults-suggests-you-can-keep-your-brain-young-and-spry-2017070511957" rel="noopener noreferrer" target="_blank">https://www.health.harvard.edu/blog/super-agers-this-special-group-of-older-adults-suggests-you-can-keep-your-brain-young-and-spry-2017070511957</a></li>
+        <li>Sun, F. W., Stepanovic, M. R., Andreano, J., Barrett, L. F., Touroutoglou, A., &amp; Dickerson, B. C. (2016). Youthful Brains in Older Adults: Preserved Neuroanatomy in the Default Mode and Salience Networks Contributes to Youthful Memory in Superaging. The Journal of neuroscience: the official journal of the Society for Neuroscience, 36(37), 9659–9668. <a href="https://doi.org/10.1523/JNEUROSCI.1492-16.2016" rel="noopener noreferrer" target="_blank">https://doi.org/10.1523/JNEUROSCI.1492-16.2016</a></li>
+        <li>Sanchez-Roman, I., Ferrando, B., Holst, C. M., Mengel-From, J., Rasmussen, S. H., Thinggaard, M., Bohr, V. A., Christensen, K., &amp; Stevnsner, T. (2022). Molecular markers of DNA repair and brain metabolism correlate with cognition in centenarians. GeroScience, 44(1), 103–125. <a href="https://doi.org/10.1007/s11357-021-00502-2" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s11357-021-00502-2</a></li>
+        <li>Sanchez-Roman, I., Ferrando, B., Holst, C. M., Mengel-From, J., Rasmussen, S. H., Thinggaard, M., Bohr, V. A., Christensen, K., &amp; Stevnsner, T. (2022). Molecular markers of DNA repair and brain metabolism correlate with cognition in centenarians. GeroScience, 44(1), 103–125. <a href="https://doi.org/10.1007/s11357-021-00502-2" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s11357-021-00502-2</a></li>
+        <li>Bathina, S., &amp; Das, U. N. (2015). Brain-derived neurotrophic factor and its clinical implications. Archives of medical science : AMS, 11(6), 1164–1178. <a href="https://doi.org/10.5114/aoms.2015.56342" rel="noopener noreferrer" target="_blank">https://doi.org/10.5114/aoms.2015.56342</a></li>
+        <li>Binder, D. K., &amp; Scharfman, H. E. (2004). Brain-derived neurotrophic factor. Growth factors (Chur, Switzerland), 22(3), 123–131. <a href="https://doi.org/10.1080/08977190410001723308" rel="noopener noreferrer" target="_blank">https://doi.org/10.1080/08977190410001723308</a></li>
+        <li>Bathina, S., &amp; Das, U. N. (2015). Brain-derived neurotrophic factor and its clinical implications. Archives of medical science : AMS, 11(6), 1164–1178. <a href="https://doi.org/10.5114/aoms.2015.56342" rel="noopener noreferrer" target="_blank">https://doi.org/10.5114/aoms.2015.56342</a></li>
+        <li>BDNF: How meditation may prevent a*******'s &amp; d******a. EOC Institute. (n.d.). <a href="https://eocinstitute.org/meditation/bdnf-how-meditation-prevents-a*******&#x27;s-disease-d******a/" rel="noopener noreferrer" target="_blank">https://eocinstitute.org/meditation/bdnf-how-meditation-prevents-a*******'s-disease-d******a/</a></li>
+        <li>Bekinschtein, P., Cammarota, M., Katche, C., Slipczuk, L., Rossato, J. I., Goldin, A., Izquierdo, I., &amp; Medina, J. H. (2008). BDNF is essential to promote persistence of long-term memory storage. Proceedings of the National Academy of Sciences of the United States of America, 105(7), 2711–2716. <a href="https://doi.org/10.1073/pnas.0711863105" rel="noopener noreferrer" target="_blank">https://doi.org/10.1073/pnas.0711863105</a></li>
+        <li>Bekinschtein, P., Cammarota, M., Katche, C., Slipczuk, L., Rossato, J. I., Goldin, A., Izquierdo, I., &amp; Medina, J. H. (2008). BDNF is essential to promote persistence of long-term memory storage. Proceedings of the National Academy of Sciences of the United States of America, 105(7), 2711–2716. <a href="https://doi.org/10.1073/pnas.0711863105" rel="noopener noreferrer" target="_blank">https://doi.org/10.1073/pnas.0711863105</a></li>
+        <li>Kowiański, P., Lietzau, G., Czuba, E., Waśkow, M., Steliga, A., &amp; Moryś, J. (2018). BDNF: A Key Factor with Multipotent Impact on Brain Signaling and Synaptic Plasticity. Cellular and molecular neurobiology, 38(3), 579–593. <a href="https://doi.org/10.1007/s10571-017-0510-4" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s10571-017-0510-4</a></li>
+        <li>Kowiański, P., Lietzau, G., Czuba, E., Waśkow, M., Steliga, A., &amp; Moryś, J. (2018). BDNF: A Key Factor with Multipotent Impact on Brain Signaling and Synaptic Plasticity. Cellular and molecular neurobiology, 38(3), 579–593. <a href="https://doi.org/10.1007/s10571-017-0510-4" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s10571-017-0510-4</a></li>
+        <li>Hu, B., Nikolakopoulou, A. M., &amp; Cohen-Cory, S. (2005). BDNF stabilizes synapses and maintains the structural complexity of optic axons in vivo.</li>
+        <li>Sanchez-Roman, I., Ferrando, B., Holst, C. M., Mengel-From, J., Rasmussen, S. H., Thinggaard, M., Bohr, V. A., Christensen, K., &amp; Stevnsner, T. (2022). Molecular markers of DNA repair and brain metabolism correlate with cognition in centenarians. GeroScience, 44(1), 103–125. <a href="https://doi.org/10.1007/s11357-021-00502-2" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s11357-021-00502-2</a></li>
+        <li>Weinstein, G., Beiser, A. S., Choi, S. H., Preis, S. R., Chen, T. C., Vorgas, D., Au, R., Pikula, A., Wolf, P. A., DeStefano, A. L., Vasan, R. S., &amp; Seshadri, S. (2014). Serum brain-derived neurotrophic factor and the risk for d******a: the Framingham Heart Study. JAMA neurology, 71(1), 55–61. <a href="https://doi.org/10.1001/jamaneurol.2013.4781" rel="noopener noreferrer" target="_blank">https://doi.org/10.1001/jamaneurol.2013.4781</a></li>
+        <li>Molteni, R., Barnard, R. J., Ying, Z., Roberts, C. K., &amp; Gómez-Pinilla, F. (2002). A high-fat, refined sugar diet reduces hippocampal brain-derived neurotrophic factor, neuronal plasticity, and learning. Neuroscience, 112(4), 803-814.</li>
+        <li>Kowiański, P., Lietzau, G., Czuba, E. et al. BDNF: A Key Factor with Multipotent Impact on Brain Signaling and Synaptic Plasticity. Cell Mol Neurobiol 38, 579–593 (2018). <a href="https://doi.org/10.1007/s10571-017-0510-4" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s10571-017-0510-4</a></li>
+        <li>Xue, B., Waseem, S. M. A., Zhu, Z., Alshahrani, M. A., Nazam, N., Anjum, F., ... &amp; Sharma, M. (2022). Brain-derived neurotrophic factor: a connecting link between nutrition, lifestyle, and A*******'s disease. Frontiers in Neuroscience, 16, 925991.</li>
+        <li>Ng, T. K. S., Ho, C. S. H., Tam, W. W. S., Kua, E. H., &amp; Ho, R. C. (2019). Decreased Serum Brain-Derived Neurotrophic Factor (BDNF) Levels in Patients with a********'s Disease (AD): A Systematic Review and Meta-Analysis. International journal of molecular sciences, 20(2), 257. <a href="https://doi.org/10.3390/ijms20020257" rel="noopener noreferrer" target="_blank">https://doi.org/10.3390/ijms20020257</a></li>
+        <li>Budni, J., Bellettini-Santos, T., Mina, F., Garcez, M. L., &amp; Zugno, A. I. (2015). The involvement of BDNF, NGF and GDNF in aging and a********'s disease. Aging and disease, 6(5), 331–341. <a href="https://doi.org/10.14336/AD.2015.0825" rel="noopener noreferrer" target="_blank">https://doi.org/10.14336/AD.2015.0825</a></li>
+        <li>Lee, J. G., Shin, B. S., You, Y. S., Kim, J. E., Yoon, S. W., Jeon, D. W., Baek, J. H., Park, S. W., &amp; Kim, Y. H. (2009). Decreased serum brain-derived neurotrophic factor levels in elderly korean with d******a. Psychiatry investigation, 6(4), 299–305. <a href="https://doi.org/10.4306/pi.2009.6.4.299" rel="noopener noreferrer" target="_blank">https://doi.org/10.4306/pi.2009.6.4.299</a></li>
+        <li>Laske, C., Stransky, E., Leyhe, T., Eschweiler, G. W., Maetzler, W., Wittorf, A., ... &amp; Schott, K. (2007). BDNF serum and CSF concentrations in A*******'s disease, normal pressure hydrocephalus and healthy controls. Journal of psychiatric research, 41(5), 387-394.</li>
+        <li>Forlenza, O. V., Diniz, B. S., Teixeira, A. L., Ojopi, E. B., Talib, L. L., Mendonça, V. A., … Gattaz, W. F. (2010). Effect of brain-derived neurotrophic factor Val66Met polymorphism and serum levels on the progression of mild cognitive impairment. The World Journal of Biological Psychiatry, 11(6), 774–780. <a href="https://doi.org/10.3109/15622971003797241" rel="noopener noreferrer" target="_blank">https://doi.org/10.3109/15622971003797241</a></li>
+        <li>Diniz, B. S., &amp; Teixeira, A. L. (2011). Brain-derived neurotrophic factor and a********'s disease: physiopathology and beyond. Neuromolecular medicine, 13(4), 217–222. <a href="https://doi.org/10.1007/s12017-011-8154-x" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s12017-011-8154-x</a></li>
+        <li>Nilsson, J., Ekblom, Ö., Ekblom, M. et al. Acute increases in brain-derived neurotrophic factor in plasma following physical exercise relates to subsequent learning in older adults. Sci Rep 10, 4395 (2020). <a href="https://doi.org/10.1038/s41598-020-60124-0" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41598-020-60124-0</a></li>
+        <li>Glazachev, O. S., Zapara, M. A., Dudnik, E. N., Samartseva, V. G., &amp; Susta, D. (2020). Repeated hyperthermia exposure increases circulating Brain Derived Neurotrophic Factor levels which is associated with improved quality of life, and reduced a******: A randomized controlled trial. Journal of Thermal Biology, 89, 102482.</li>
+        <li>Glazachev, O. S., Zapara, M. A., Dudnik, E. N., Samartseva, V. G., &amp; Susta, D. (2020). Repeated hyperthermia exposure increases circulating Brain Derived Neurotrophic Factor levels which is associated with improved quality of life, and reduced a******: A randomized controlled trial. Journal of Thermal Biology, 89, 102482.</li>
+        <li>Cahn, B. R., Goodman, M. S., Peterson, C. T., Maturi, R., &amp; Mills, P. J. (2017). Yoga, Meditation and Mind-Body Health: Increased BDNF, Cortisol Awakening Response, and Altered Inflammatory Marker Expression after a 3-Month Yoga and Meditation Retreat. Frontiers in human neuroscience, 11, 315. <a href="https://doi.org/10.3389/fnhum.2017.00315" rel="noopener noreferrer" target="_blank">https://doi.org/10.3389/fnhum.2017.00315</a></li>
+        <li>Huang, F., Shang, Y., Luo, Y., Wu, P., Huang, X., Tan, X., Lu, X., Zhen, L., &amp; Hu, X. (2016). Lower Prevalence of a********'s Disease among Tibetans: Association with Religious and Genetic Factors. Journal of a********'s disease : JAD, 50(3), 659–667. <a href="https://doi.org/10.3233/JAD-150697" rel="noopener noreferrer" target="_blank">https://doi.org/10.3233/JAD-150697</a></li>
+        <li>Gómez-Pinilla F. (2008). Brain foods: the effects of nutrients on brain function. Nature reviews. Neuroscience, 9(7), 568–578. <a href="https://doi.org/10.1038/nrn2421" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/nrn2421</a></li>
+        <li>Zeeni, N., Haidar, E. A., Azar, A., Ghanem, A., Bassil, K., Bassil, M., &amp; Sleiman, S. (2017). The combinatory effects of diet and exercise on BDNF gene expression. The FASEB Journal, 31, 150-8.</li>
+        <li>Sangiovanni, E., Brivio, P., Dell'Agli, M., &amp; Calabrese, F. (2017). Botanicals as Modulators of Neuroplasticity: Focus on BDNF. Neural plasticity, 2017, 5965371. <a href="https://doi.org/10.1155/2017/5965371" rel="noopener noreferrer" target="_blank">https://doi.org/10.1155/2017/5965371</a></li>
+        <li>Hasselmo, M. E., &amp; Bower, J. M. (1993). Acetylcholine and memory. Trends in neurosciences, 16(6), 218–222. <a href="https://doi.org/10.1016/0166-2236(93)90159-j" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/0166-2236(93)90159-j</a></li>
+        <li>Walker, E. A., &amp; Pellegrini, M. V. (2023). Bacopa monnieri. In StatPearls. StatPearls Publishing.</li>
+        <li>Zhang, X., Feng, D., Barry, D., &amp; Li, J. (2024). Closed-loop control of gamma oscillations in the brain connections through the transcranial stimulations. arXiv preprint arXiv:2403.06794.</li>
+        <li>Ross, B., &amp; Lopez, M. D. (2020). 40-Hz Binaural beats enhance training to mitigate the attentional blink. Scientific reports, 10(1), 7002. <a href="https://doi.org/10.1038/s41598-020-63980-y" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41598-020-63980-y</a></li>
+        <li>Zhang, X., Feng, D., Barry, D., &amp; Li, J. (2024). Closed-loop control of gamma oscillations in the brain connections through the transcranial stimulations. arXiv preprint arXiv:2403.06794.</li>
+        <li>Kowiański, P., Lietzau, G., Czuba, E., Waśkow, M., Steliga, A., &amp; Moryś, J. (2018). BDNF: A Key Factor with Multipotent Impact on Brain Signaling and Synaptic Plasticity. Cellular and molecular neurobiology, 38(3), 579–593. <a href="https://doi.org/10.1007/s10571-017-0510-4" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s10571-017-0510-4</a></li>
+        <li>Hu, B., Nikolakopoulou, A. M., &amp; Cohen-Cory, S. (2005). BDNF stabilizes synapses and maintains the structural complexity of optic axons in vivo.</li>
+        <li>Kowiański, P., Lietzau, G., Czuba, E., Waśkow, M., Steliga, A., &amp; Moryś, J. (2018). BDNF: A Key Factor with Multipotent Impact on Brain Signaling and Synaptic Plasticity. Cellular and molecular neurobiology, 38(3), 579–593. <a href="https://doi.org/10.1007/s10571-017-0510-4" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s10571-017-0510-4</a></li>
+        <li>Bekinschtein, P., Cammarota, M., Katche, C., Slipczuk, L., Rossato, J. I., Goldin, A., Izquierdo, I., &amp; Medina, J. H. (2008). BDNF is essential to promote persistence of long-term memory storage. Proceedings of the National Academy of Sciences of the United States of America, 105(7), 2711–2716. <a href="https://doi.org/10.1073/pnas.0711863105" rel="noopener noreferrer" target="_blank">https://doi.org/10.1073/pnas.0711863105</a></li>
+        <li>Weinstein, G., Beiser, A. S., Choi, S. H., Preis, S. R., Chen, T. C., Vorgas, D., Au, R., Pikula, A., Wolf, P. A., DeStefano, A. L., Vasan, R. S., &amp; Seshadri, S. (2014). Serum brain-derived neurotrophic factor and the risk for d******a: the Framingham Heart Study. JAMA neurology, 71(1), 55–61. <a href="https://doi.org/10.1001/jamaneurol.2013.4781" rel="noopener noreferrer" target="_blank">https://doi.org/10.1001/jamaneurol.2013.4781</a></li>
+        <li>Sanchez-Roman, I., Ferrando, B., Holst, C. M., Mengel-From, J., Rasmussen, S. H., Thinggaard, M., Bohr, V. A., Christensen, K., &amp; Stevnsner, T. (2022). Molecular markers of DNA repair and brain metabolism correlate with cognition in centenarians. GeroScience, 44(1), 103–125. <a href="https://doi.org/10.1007/s11357-021-00502-2" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s11357-021-00502-2</a></li>
+        <li>Binder, D. K., &amp; Scharfman, H. E. (2004). Brain-derived neurotrophic factor. Growth factors (Chur, Switzerland), 22(3), 123–131. <a href="https://doi.org/10.1080/08977190410001723308" rel="noopener noreferrer" target="_blank">https://doi.org/10.1080/08977190410001723308</a></li>
+        <li>Bathina, S., &amp; Das, U. N. (2015). Brain-derived neurotrophic factor and its clinical implications. Archives of medical science : AMS, 11(6), 1164–1178. <a href="https://doi.org/10.5114/aoms.2015.56342" rel="noopener noreferrer" target="_blank">https://doi.org/10.5114/aoms.2015.56342</a></li>
+        <li>BDNF: How meditation may prevent a*******'s &amp; d******a. EOC Institute. (n.d.). <a href="https://eocinstitute.org/meditation/bdnf-how-meditation-prevents-a*******&#x27;s-disease-d******a/" rel="noopener noreferrer" target="_blank">https://eocinstitute.org/meditation/bdnf-how-meditation-prevents-a*******'s-disease-d******a/</a></li>
+        <li>Nilsson, J., Ekblom, Ö., Ekblom, M. et al. Acute increases in brain-derived neurotrophic factor in plasma following physical exercise relates to subsequent learning in older adults. Sci Rep 10, 4395 (2020). <a href="https://doi.org/10.1038/s41598-020-60124-0" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41598-020-60124-0</a></li>
+        <li>Cahn, B. R., Goodman, M. S., Peterson, C. T., Maturi, R., &amp; Mills, P. J. (2017). Yoga, Meditation and Mind-Body Health: Increased BDNF, Cortisol Awakening Response, and Altered Inflammatory Marker Expression after a 3-Month Yoga and Meditation Retreat. Frontiers in human neuroscience, 11, 315. <a href="https://doi.org/10.3389/fnhum.2017.00315" rel="noopener noreferrer" target="_blank">https://doi.org/10.3389/fnhum.2017.00315</a></li>
+        <li>Molendijk, M. L., Haffmans, J. P., Bus, B. A., Spinhoven, P., Penninx, B. W., Prickaerts, J., Oude Voshaar, R. C., &amp; Elzinga, B. M. (2012). Serum BDNF concentrations show strong seasonal variation and correlations with the amount of ambient sunlight. PloS one, 7(11), e48046. <a href="https://doi.org/10.1371/journal.pone.0048046" rel="noopener noreferrer" target="_blank">https://doi.org/10.1371/journal.pone.0048046</a></li>
+        <li>Ross, B., &amp; Lopez, M. D. (2020). 40-Hz Binaural beats enhance training to mitigate the attentional blink. Scientific reports, 10(1), 7002. <a href="https://doi.org/10.1038/s41598-020-63980-y" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41598-020-63980-y</a></li>
+        <li>Martorell, A. J., Paulson, A. L., Suk, H. J., Abdurrob, F., Drummond, G. T., Guan, W., Young, J. Z., Kim, D. N., Kritskiy, O., Barker, S. J., Mangena, V., Prince, S. M., Brown, E. N., Chung, K., Boyden, E. S., Singer, A. C., &amp; Tsai, L. H. (2019). Multi-sensory Gamma Stimulation Ameliorates a********'s-Associated Pathology and Improves Cognition. Cell, 177(2), 256–271.e22. <a href="https://doi.org/10.1016/j.cell.2019.02.014" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.cell.2019.02.014</a></li>
+        <li>Zhang, X., Feng, D., Barry, D., &amp; Li, J. (2024). Closed-loop control of gamma oscillations in the brain connections through the transcranial stimulations. arXiv preprint arXiv:2403.06794.</li>
+        <li>Reedijk, S. A., Bolders, A., &amp; Hommel, B. (2013). The impact of binaural beats on creativity. Frontiers in human neuroscience, 7, 786.</li>
+        <li>More, S. S., Vartak, A. P., &amp; Vince, R. (2012). The butter flavorant, diacetyl, exacerbates β-a****** cytotoxicity. Chemical research in toxicology, 25(10), 2083–2091. <a href="https://doi.org/10.1021/tx3001016" rel="noopener noreferrer" target="_blank">https://doi.org/10.1021/tx3001016</a></li>
+        <li>Herculano-Houzel, S. (2009). The human brain in numbers: A linearly scaled-up primate brain. Frontiers in Human Neuroscience, 3, 31. <a href="https://doi.org/10.3389/neuro.09.031.2009" rel="noopener noreferrer" target="_blank">https://doi.org/10.3389/neuro.09.031.2009</a></li>
+        <li>Ben-Yakov, A., Dudai, Y., &amp; Mayford, M. R. (2015). Memory retrieval in mice and men. Cold Spring Harbor Perspectives in Biology, 7(12), a021790. <a href="https://doi.org/10.1101/cshperspect.a021790" rel="noopener noreferrer" target="_blank">https://doi.org/10.1101/cshperspect.a021790</a></li>
+        <li>Boseley, S. (2012, January 5). Memory l*** can begin from age 45, scientists say. The Guardian. <a href="https://www.theguardian.com/science/2012/jan/06/memory-loss-begins-at-45-says-study" rel="noopener noreferrer" target="_blank">https://www.theguardian.com/science/2012/jan/06/memory-loss-begins-at-45-says-study</a></li>
+        <li>Nisa, F. Y., Rahman, M. A., Hossen, M. A., Khan, M. F., Khan, M. A. N., Majid, M., Sultana, F., &amp; Haque, M. A. (2021). Role of neurotoxicants in the pathogenesis of A********** disease: A mechanistic insight. Annals of Medicine, 53(1), 1479–1504. <a href="https://doi.org/10.1080/07853890.2021.1966088" rel="noopener noreferrer" target="_blank">https://doi.org/10.1080/07853890.2021.1966088</a></li>
+        <li>Chin-Chan, M., Navarro-Yepes, J., &amp; Quintanilla-Vega, B. (2015). Environmental pollutants as risk factors for neurodegenerative disorders: A******** and P******** d********. Frontiers in Cellular Neuroscience, 9, 124. <a href="https://doi.org/10.3389/fncel.2015.00124" rel="noopener noreferrer" target="_blank">https://doi.org/10.3389/fncel.2015.00124</a></li>
+        <li>More, S. V., Kumar, H., Cho, D.-Y., Yun, Y.-S., &amp; Choi, D.-K. (2016). Toxin-induced experimental models of learning and memory impairment. International Journal of Molecular Sciences, 17(9), 1447. <a href="https://doi.org/10.3390/ijms17091447" rel="noopener noreferrer" target="_blank">https://doi.org/10.3390/ijms17091447</a></li>
+        <li>Neumann, H., Kotter, M. R., &amp; Franklin, R. J. M. (2008). Debris clearance by microglia: an essential link between degeneration and regeneration. Brain, 132(2), 288–295., doi.org/10.1093/brain/awn109</li>
+        <li>Kraft, A. D., &amp; Harry, G. J. (2011). Features of microglia and neuroinflammation relevant to environmental exposure and neurotoxicity. International Journal of Environmental Research and Public Health, 8(7), 2980-3018. <a href="https://doi.org/10.3390/ijerph8072980" rel="noopener noreferrer" target="_blank">https://doi.org/10.3390/ijerph8072980</a></li>
+        <li>Virginia Department of Health. (n.d.). Bisphenol A (BPA). Retrieved October 16, 2024, from <a href="https://www.vdh.virginia.gov/environmental-health/public-health-toxicology/bisphenol-a/" rel="noopener noreferrer" target="_blank">https://www.vdh.virginia.gov/environmental-health/public-health-toxicology/bisphenol-a/</a></li>
+        <li>Hamblin, J. (2014, March 18). The toxins that threaten our brains. The Atlantic. <a href="https://www.theatlantic.com/health/archive/2014/03/the-toxins-that-threaten-our-brains/284466/" rel="noopener noreferrer" target="_blank">https://www.theatlantic.com/health/archive/2014/03/the-toxins-that-threaten-our-brains/284466/</a></li>
+        <li>Vellinga, J. (2021, January 26). N*********s: Cause, effect, and prevention. Temecula Center for Integrative Medicine. Retrieved from <a href="https://www.tcimedicine.com/post/n*********s-cause-effect-and-prevention" rel="noopener noreferrer" target="_blank">https://www.tcimedicine.com/post/n*********s-cause-effect-and-prevention</a></li>
+        <li>Knoll, S. (2015, March 21). Harmful chemicals and n*********s: Silently eroding intelligence, damaging societies. Journalist's Resource. Retrieved from <a href="https://journalistsresource.org/environment/neurobehavioral-effects-developmental-toxicity/" rel="noopener noreferrer" target="_blank">https://journalistsresource.org/environment/neurobehavioral-effects-developmental-toxicity/</a></li>
+        <li>Sanchez-Roman, I., Ferrando, B., Holst, C. M., Mengel-From, J., Rasmussen, S. H., Thinggaard, M., Bohr, V. A., Christensen, K., &amp; Stevnsner, T. (2021). Molecular markers of DNA repair and brain metabolism correlate with cognition in centenarians. GeroScience, 44(1), 103–125. <a href="https://doi.org/10.1007/s11357-021-00502-2" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s11357-021-00502-2</a></li>
+        <li>Bekinschtein, P., Cammarota, M., Katche, C., Slipczuk, L., Rossato, J. I., Goldin, A., Izquierdo, I., &amp; Medina, J. H. (2008). BDNF is essential to promote persistence of long-term memory storage. Proceedings of the National Academy of Sciences, 105(7), 2711–2716. <a href="https://doi.org/10.1073/pnas.0711863105" rel="noopener noreferrer" target="_blank">https://doi.org/10.1073/pnas.0711863105</a></li>
+        <li>Weinstein, G., Beiser, A. S., Choi, S. H., Preis, S. R., Chen, T. C., Vorgas, D., Au, R., Pikula, A., Wolf, P. A., DeStefano, A. L., Vasan, R. S., &amp; Seshadri, S. (2014). Serum Brain-Derived Neurotrophic Factor and the Risk for D*******: The Framingham Heart Study. JAMA Neurology, 71(1), 55–61. <a href="https://doi.org/10.1001/jamaneurol.2013.4781" rel="noopener noreferrer" target="_blank">https://doi.org/10.1001/jamaneurol.2013.4781</a></li>
+        <li>Staff, R. T., Hogan, M. J., Williams, D. S., &amp; Whalley, L. J. (2018). Intellectual engagement and cognitive ability in later life (the "use it or lose it" conjecture): Longitudinal, prospective study. BMJ, 363, k4925. <a href="https://doi.org/10.1136/bmj.k4925" rel="noopener noreferrer" target="_blank">https://doi.org/10.1136/bmj.k4925</a></li>
+        <li>Cantero, J. L., Atienza, M., Madsen, J. R., &amp; Stickgold, R. (2004). Gamma EEG dynamics in neocortex and hippocampus during human wakefulness and sleep. NeuroImage, 22(3), 1271–1280., doi.org/10.1016/j.neuroimage.2004.03.014</li>
+        <li>Monteiro, B. C., Monteiro, S., Candida, M., Adler, N., Paes, F., Rocha, N., Nardi, A. E., Murillo-Rodriguez, E., &amp; Machado, S. (2017). Relationship Between Brain-Derived Neurotrophic Factor (Bdnf) and Sleep on Depression: A Critical Review. Clinical Practice &amp; Epidemiology in Mental Health, 13, 213–219. <a href="https://doi.org/10.2174/1745017901713010213" rel="noopener noreferrer" target="_blank">https://doi.org/10.2174/1745017901713010213</a></li>
+      </ol>
+    </div>
+  </section>
+
+<footer class="rodape">
+    <div class="interno">
+      <ul class="links-legali">
+        <li><a href="/privacy/">Informativa sulla privacy</a></li>
+        <li><a href="/cookie/">Cookie policy</a></li>
+        <li><a href="/termini/">Termini e condizioni</a></li>
+        <li><a href="/rimborsi/">Rimborsi e garanzia</a></li>
+        <li><a href="/note-legali/">Note legali</a></li>
+        <li><a href="/contatti/">Contatti</a></li>
+      </ul>
+      <p class="rodape-txt">Benessere Ogni Giorno, Roma, Italia. Contatti: contatto@lamelodiadellamemoria.com. Il pagamento è gestito da Hotmart B.V. (Amsterdam, Paesi Bassi), che agisce come agente commerciale per conto del venditore.</p>
+      <p class="rodape-txt rodape-avvertenza"><span data-product-name>La Melodia della Memoria</span> non è un dispositivo medico e non serve a diagnosticare, trattare, curare o prevenire alcuna malattia. Le informazioni di questa pagina hanno scopo divulgativo e non sostituiscono il parere del medico. I risultati possono variare da persona a persona. Questo sito non è affiliato a Rita Levi-Montalcini, alle istituzioni che portano il suo nome, al MIT, alle altre istituzioni né ai ricercatori citati. Sconsigliato in caso di epilessia o disturbi dell'udito; ascoltare a volume basso. Questo sito non fa parte di Facebook, Instagram o Meta Platforms, Inc. e non è approvato da Meta.</p>
+    </div>
+  </footer>
+
+  <div class="vsl-saida" data-vsl-saida hidden>
+    <div class="vsl-saida-backdrop" data-vsl-saida-backdrop tabindex="-1"></div>
+    <div class="vsl-saida-dialog" role="dialog" aria-modal="true" aria-labelledby="vsl-saida-attesa" aria-describedby="vsl-saida-tra vsl-saida-sub vsl-saida-paragrafo">
+      <button type="button" class="vsl-saida-x" data-vsl-saida-chiudi aria-label="Chiudi"></button>
+      <p class="vsl-saida-attesa" id="vsl-saida-attesa" data-exit-copy="attesa">ASPETTA!</p>
+      <p class="vsl-saida-tra" id="vsl-saida-tra" data-exit-copy="tra" data-vsl-saida-tra></p>
+      <p class="vsl-saida-sub" id="vsl-saida-sub" data-exit-copy="sottotitolo">Una routine di ascolto di 15 minuti al giorno, a casa, con le cuffie, per prenderti cura della tua memoria.</p>
+      <div class="vsl-saida-corpo">
+        <div class="vsl-saida-imgcol">
+          <img src="../img/vsl-saida.webp" width="200" height="156" alt="" data-vsl-saida-img decoding="async">
+        </div>
+        <div class="vsl-saida-txtcol">
+          <p id="vsl-saida-paragrafo" data-exit-copy="paragrafo">Se ti capita di cercare un nome che conosci benissimo, sappi che il ricordo c'è ancora. È nel cassetto: solo che non si apre al momento giusto. Se hai passato i cinquanta, guarda il video fino alla fine.</p>
+        </div>
+      </div>
+      <button type="button" class="vsl-saida-cta" data-vsl-saida-cta data-exit-copy="cta">Continua a guardare il video</button>
+      <p class="vsl-saida-testo" data-reserved="exit-text-link" data-requires="exit-text-link" hidden>
+        <a class="vsl-saida-testo-link" data-vsl-saida-testo data-exit-copy="testoLink" href="#">Preferisci leggere? Apri la versione scritta</a>
+      </p>
+    </div>
+  </div>
+  <script src="../js/player.js"></script>
+  <script>bsitApplicareCampi(); bsitAplicarLinks();</script>
+</body>
+</html>
