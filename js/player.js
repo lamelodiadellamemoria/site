@@ -120,6 +120,8 @@
     var volumeDock = player.querySelector('[data-vsl-volume-dock]');
     var frame = player.querySelector('.vsl-frame') || player;
     var btnEsci = player.querySelector('[data-vsl-esci-pieno]');
+    var btnEntra = player.querySelector('[data-vsl-entra-pieno]');
+    var volumeDica = player.querySelector('[data-vsl-volume-dica]');
 
     var vslSrc = window.VSL_VIDEO_SRC || window.VIDEO_SRC;
     var vslPoster = window.VSL_POSTER || window.VIDEO_POSTER;
@@ -177,16 +179,21 @@
     var direto = ingressoDiretto();
     var immerso = false;
     var pseudoPieno = false;
+    var volumeReadonly = false;
+    var pausaInterna = false;
+    var saidaPendenteAposFS = false;
+    var inBuffer = false;
+    var inContainerFS = false;
     var historyPushed = false;
     var chiudendoStoria = false;
 
-    function isiPhone() {
+    function eIOS() {
       var ua = navigator.userAgent || '';
-      return /iPhone|iPod/.test(ua);
+      if (/Android/i.test(ua)) return false;
+      return /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
     }
 
     function puoFullscreenElemento() {
-      if (isiPhone()) return false;
       return !!(frame && (frame.requestFullscreen || frame.webkitRequestFullscreen));
     }
 
@@ -194,8 +201,26 @@
       return document.fullscreenElement || document.webkitFullscreenElement || null;
     }
 
+    function videoInFullscreenNativo() {
+      return !!(video && video.webkitDisplayingFullscreen);
+    }
+
     function isImmerso() {
-      return immerso || !!elementoFullscreen() || !!(frame && frame.classList.contains('is-pseudo-full'));
+      return immerso || !!elementoFullscreen() || videoInFullscreenNativo() || !!(frame && frame.classList.contains('is-pseudo-full'));
+    }
+
+    function pauseInterno() {
+      pausaInterna = true;
+      try { if (!video.paused) video.pause(); }
+      finally {
+        setTimeout(function () { pausaInterna = false; }, 50);
+      }
+    }
+
+    function syncPienoBottoni() {
+      var on = isImmerso();
+      if (btnEsci) btnEsci.hidden = !on;
+      if (btnEntra) btnEntra.hidden = on || !iniziato || rivelata;
     }
 
     function attivarePseudo() {
@@ -215,26 +240,73 @@
       } catch (e) {}
     }
 
+    function chiamareFSVideo() {
+      try {
+        if (video.webkitEnterFullscreen) {
+          video.webkitEnterFullscreen();
+          return true;
+        }
+      } catch (e) {}
+      try {
+        var reqV = video.requestFullscreen || video.webkitRequestFullscreen;
+        if (reqV) {
+          reqV.call(video);
+          return true;
+        }
+      } catch (e2) {}
+      return false;
+    }
+
+    /* Entra em tela cheia no mesmo turno do gesto, sem await antes.
+       iOS: webkitEnterFullscreen no <video> (position:fixed no pai deixa o quadro preto).
+       Android/desktop: requestFullscreen no container, com prefixo e fallback no video. */
     function entrareImmersione() {
       if (rivelata) return;
       if (video.muted) return;
       if (isImmerso()) return;
       ignoreAwayAte = Date.now() + 700;
-      immerso = true;
-      if (frame) frame.classList.add('is-immerso');
-      if (btnEsci) btnEsci.hidden = false;
-      if (puoFullscreenElemento()) {
-        var req = frame.requestFullscreen || frame.webkitRequestFullscreen;
+
+      if (eIOS() && video.webkitEnterFullscreen) {
         try {
+          video.webkitEnterFullscreen();
+          immerso = true;
+          if (frame) frame.classList.add('is-immerso');
+          syncPienoBottoni();
+          return;
+        } catch (e) { /* cai no fallback abaixo */ }
+      }
+
+      if (puoFullscreenElemento()) {
+        immerso = true;
+        inContainerFS = true;
+        if (frame) frame.classList.add('is-immerso');
+        syncPienoBottoni();
+        try {
+          var req = frame.requestFullscreen || frame.webkitRequestFullscreen;
           var p = req.call(frame);
           if (p && typeof p.catch === 'function') {
-            p.catch(function () { attivarePseudo(); });
+            p.catch(function () {
+              if (videoInFullscreenNativo() || elementoFullscreen()) return;
+              if (!chiamareFSVideo() && !eIOS()) attivarePseudo();
+              syncPienoBottoni();
+            });
           }
         } catch (e) {
-          attivarePseudo();
+          if (!chiamareFSVideo() && !eIOS()) attivarePseudo();
+          syncPienoBottoni();
         }
-      } else {
+        return;
+      }
+
+      if (chiamareFSVideo()) {
+        immerso = true;
+        syncPienoBottoni();
+        return;
+      }
+      /* iOS: não usar position:fixed — o layer do <video> fica preto. */
+      if (!eIOS()) {
         attivarePseudo();
+        syncPienoBottoni();
       }
     }
 
@@ -242,18 +314,28 @@
       opts = opts || {};
       var era = isImmerso() || immerso || pseudoPieno;
       immerso = false;
+      inContainerFS = false;
       pseudoPieno = false;
       if (frame) frame.classList.remove('is-immerso', 'is-pseudo-full');
       document.documentElement.classList.remove('vsl-is-pseudo-full');
       document.body.style.overflow = '';
       if (btnEsci) btnEsci.hidden = true;
+      if (videoInFullscreenNativo() && video.webkitExitFullscreen) {
+        try { video.webkitExitFullscreen(); } catch (e) {}
+      }
+      try {
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+      } catch (e) {}
       var fs = elementoFullscreen();
-      if (fs && (fs === frame || (frame && frame.contains(fs)) || fs === player || (player.contains && player.contains(fs)))) {
+      if (fs && (fs === frame || (frame && frame.contains(fs)) || fs === player || (player.contains && player.contains(fs)) || fs === video)) {
         try {
           var ex = document.exitFullscreen || document.webkitExitFullscreen;
           if (ex) ex.call(document);
         } catch (e) {}
       }
+      syncPienoBottoni();
       if (historyPushed && !opts.fromPopstate) {
         historyPushed = false;
         chiudendoStoria = true;
@@ -317,6 +399,7 @@
       player.classList.toggle('is-playing', !paused);
       player.classList.toggle('is-started', iniziato);
       if (playOverlay) playOverlay.hidden = !paused || awayPaused || saidaAperta;
+      syncPienoBottoni();
     }
 
     function syncMute() {
@@ -343,21 +426,19 @@
       mostraRetorno(false);
       setLoading(true);
       video.muted = false;
+      if (!video.muted) entrareImmersione();
       var p = video.play();
       if (p && typeof p.then === 'function') {
         p.then(function () {
           if (video.muted) video.muted = false;
           syncMute();
           syncPlay();
-          if (!video.muted) entrareImmersione();
         }).catch(function () {
           video.muted = true;
           video.play().catch(function () {});
           syncMute();
           syncPlay();
         });
-      } else if (!video.muted) {
-        entrareImmersione();
       }
     }
 
@@ -366,7 +447,7 @@
       if (Date.now() < ignoreAwayAte) return;
       if (video.paused && awayPaused) return;
       if (!video.paused) {
-        video.pause();
+        pauseInterno();
       }
       awayPaused = true;
       mostraRetorno(true);
@@ -452,6 +533,48 @@
       });
     }
 
+    function volumeEscrivibile() {
+      var prev = 1;
+      try { prev = video.volume; } catch (e) { return false; }
+      var alvo = Math.abs(prev - 0.5) < 0.05 ? 0.4 : 0.5;
+      var ok = false;
+      try {
+        video.volume = alvo;
+        ok = Math.abs(video.volume - alvo) < 0.02;
+      } catch (e) { ok = false; }
+      try { video.volume = prev; } catch (e2) {}
+      if (volume) {
+        try { volume.value = String(video.volume); } catch (e3) {}
+      }
+      return ok;
+    }
+
+    function nascondereDicaVolume() {
+      if (volumeDica) volumeDica.hidden = true;
+    }
+
+    function mostrarDicaVolumeUmaVez() {
+      if (!volumeDica) return;
+      var key = 'bsitVolumeDica';
+      try {
+        if (sessionStorage.getItem(key) === '1') return;
+        sessionStorage.setItem(key, '1');
+      } catch (e) {}
+      volumeDica.hidden = false;
+      setTimeout(nascondereDicaVolume, 5000);
+    }
+
+    function applicareVolumeUI() {
+      volumeReadonly = !volumeEscrivibile();
+      if (volumeDock) volumeDock.classList.toggle('is-readonly', volumeReadonly);
+      if (volume) {
+        volume.hidden = volumeReadonly;
+        volume.setAttribute('aria-hidden', volumeReadonly ? 'true' : 'false');
+      }
+      if (volumeReadonly) mostrarDicaVolumeUmaVez();
+      else nascondereDicaVolume();
+    }
+
     if (volumeDock) {
       volumeDock.addEventListener('click', function (e) { e.stopPropagation(); });
     }
@@ -464,22 +587,64 @@
       });
     }
 
-    document.addEventListener('fullscreenchange', function () {
-      if (!elementoFullscreen()) {
-        if (immerso && !pseudoPieno) {
-          immerso = false;
-          if (frame) frame.classList.remove('is-immerso');
-          if (btnEsci) btnEsci.hidden = true;
+    if (btnEntra) {
+      btnEntra.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!iniziato) playWithSound();
+        else entrareImmersione();
+      });
+    }
+
+    function onFullscreenChange() {
+      var fs = elementoFullscreen();
+      if (fs) {
+        inContainerFS = true;
+        immerso = true;
+        if (frame) frame.classList.add('is-immerso');
+        syncPienoBottoni();
+        return;
+      }
+      /* webkitEnterFullscreen no iOS nao usa fullscreenElement. */
+      if (videoInFullscreenNativo()) {
+        syncPienoBottoni();
+        return;
+      }
+      if (!inContainerFS) return;
+      inContainerFS = false;
+      if (!pseudoPieno) {
+        immerso = false;
+        if (frame) frame.classList.remove('is-immerso');
+        try {
+          video.playsInline = true;
+          video.setAttribute('playsinline', '');
+          video.setAttribute('webkit-playsinline', '');
+        } catch (e) {}
+        syncPienoBottoni();
+        if (saidaPendenteAposFS) {
+          saidaPendenteAposFS = false;
+          aprireUscitaPorPausa();
         }
       }
+    }
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+
+    video.addEventListener('webkitbeginfullscreen', function () {
+      immerso = true;
+      syncPienoBottoni();
     });
-    document.addEventListener('webkitfullscreenchange', function () {
-      if (!elementoFullscreen()) {
-        if (immerso && !pseudoPieno) {
-          immerso = false;
-          if (frame) frame.classList.remove('is-immerso');
-          if (btnEsci) btnEsci.hidden = true;
-        }
+    video.addEventListener('webkitendfullscreen', function () {
+      immerso = false;
+      try {
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+      } catch (e) {}
+      syncPienoBottoni();
+      if (saidaPendenteAposFS) {
+        saidaPendenteAposFS = false;
+        aprireUscitaPorPausa();
       }
     });
 
@@ -518,15 +683,25 @@
     });
 
     video.addEventListener('contextmenu', function (e) { e.preventDefault(); });
-    video.addEventListener('waiting', function () { if (playRichiesto) setLoading(true); });
-    video.addEventListener('canplay', function () { setLoading(false); });
-    video.addEventListener('playing', function () { setLoading(false); iniziato = true; syncPlay(); syncMute(); });
-    video.addEventListener('play', function () { iniziato = true; awayPaused = false; mostraRetorno(false); syncPlay(); syncMute(); });
+    video.addEventListener('waiting', function () { inBuffer = true; if (playRichiesto) setLoading(true); });
+    video.addEventListener('canplay', function () { inBuffer = false; setLoading(false); });
+    video.addEventListener('playing', function () { inBuffer = false; setLoading(false); iniziato = true; syncPlay(); syncMute(); });
+    video.addEventListener('play', function () { inBuffer = false; iniziato = true; awayPaused = false; mostraRetorno(false); syncPlay(); syncMute(); });
     video.addEventListener('pause', function () {
       syncPlay();
       syncMute();
       persistire();
-      if (!awayPaused) uscireImmersione();
+      var utente = iniziato && !pausaInterna && !awayPaused && !video.ended && !video.seeking && !restoring && !saidaAperta && !inBuffer;
+      if (utente) {
+        if (videoInFullscreenNativo()) {
+          saidaPendenteAposFS = true;
+          try { if (video.webkitExitFullscreen) video.webkitExitFullscreen(); } catch (e) {}
+          return;
+        }
+        aprireUscitaPorPausa();
+        return;
+      }
+      if (!awayPaused && !saidaAperta) uscireImmersione();
     });
     video.addEventListener('volumechange', syncMute);
     video.addEventListener('timeupdate', function () { applySeekGuard(true); });
@@ -643,13 +818,14 @@
       return (Date.now() - last) < (sec * 1000);
     }
 
-    function puoMostrareUscita(forza) {
+    function puoMostrareUscita(forza, opts) {
+      opts = opts || {};
       if (window.SHOW_EXIT_INTENT === false) return false;
       if (saidaAperta) return false;
       if (rivelata) return false;
       if (restoUscita() <= 0) return false;
-      if (!forza && inCooldownUscita()) return false;
-      if (!forza && giaMostrataUscita()) return false;
+      if (!forza && !opts.porPausa && inCooldownUscita()) return false;
+      if (!forza && !opts.porPausa && giaMostrataUscita()) return false;
       return true;
     }
 
@@ -694,8 +870,9 @@
       }
     }
 
-    function aprireUscita() {
-      if (!puoMostrareUscita(forzaTestUscita())) return false;
+    function aprireUscita(opts) {
+      opts = opts || {};
+      if (!puoMostrareUscita(forzaTestUscita() || !!opts.forza, opts)) return false;
       if (!boxUscita) return false;
       if (typeof window.bsitApplicareExitCopy === 'function') window.bsitApplicareExitCopy();
       saidaAperta = true;
@@ -704,7 +881,7 @@
       mostraRetorno(false);
       if (!video.paused) {
         ignoreAwayAte = Date.now() + 400;
-        video.pause();
+        pauseInterno();
       }
       mostraRetorno(false);
       if (playOverlay) playOverlay.hidden = true;
@@ -720,6 +897,10 @@
       }, 30);
       syncPlay();
       return true;
+    }
+
+    function aprireUscitaPorPausa() {
+      return aprireUscita({ porPausa: true });
     }
 
     function chiudereUscita(opts) {
@@ -795,6 +976,12 @@
 
     armareStoriaUscita();
 
+    try {
+      video.playsInline = true;
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+    } catch (e) {}
+    applicareVolumeUI();
     if (video.readyState >= 1) ripristinaPosizione();
     setLoading(false);
     syncPlay();

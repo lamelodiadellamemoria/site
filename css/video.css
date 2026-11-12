@@ -169,7 +169,7 @@ body {
   z-index: 4;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   gap: 6px;
 }
 .vsl-volume-btn {
@@ -199,19 +199,38 @@ body {
 .vsl-volume-btn:not(.is-muted) .vsl-volume-icon.is-on,
 .vsl-volume-btn.is-muted .vsl-volume-icon.is-off { display: block; }
 .vsl-volume-slider {
-  display: none;
+  display: block;
   width: 84px;
+  max-width: calc(100vw - 28px);
   height: 24px;
   margin: 0;
   accent-color: #fff;
   cursor: pointer;
 }
-@media (hover: hover) and (pointer: fine) {
-  .vsl-volume:hover .vsl-volume-slider,
-  .vsl-volume:focus-within .vsl-volume-slider {
-    display: block;
-  }
+.vsl-volume.is-readonly .vsl-volume-slider,
+.vsl-volume-slider[hidden] {
+  display: none !important;
 }
+.vsl-volume-dica {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: max-content;
+  max-width: min(200px, calc(100vw - 28px));
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(20, 20, 20, 0.88);
+  color: #fff;
+  font-family: "Open Sans", Inter, sans-serif;
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 5;
+}
+.vsl-volume-dica[hidden] { display: none !important; }
 
 .vsl-retorno {
   inset: 0;
@@ -767,8 +786,10 @@ body {
 }
 
 
-/* Immersione / tela cheia: Fullscreen API no .vsl-frame (não no <video>)
-   ou pseudo-fullscreen CSS no iPhone (sem webkitEnterFullscreen). */
+/* Immersione / tela cheia: no iOS, webkitEnterFullscreen no <video>
+   (nao usar position:fixed no pai — o quadro fica preto).
+   Android/desktop: requestFullscreen no .vsl-frame, com fallback no video.
+   O pseudo-fullscreen CSS fica so como fallback fora do iOS. */
 .vsl-esci-pieno {
   position: absolute;
   top: max(10px, env(safe-area-inset-top));
@@ -784,7 +805,7 @@ body {
   background: rgba(20, 20, 20, 0.78);
   color: #fff;
   cursor: pointer;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
@@ -798,6 +819,30 @@ body {
   display: flex;
 }
 .vsl-esci-pieno[hidden] { display: none !important; }
+
+.vsl-entra-pieno {
+  position: absolute;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  right: max(10px, env(safe-area-inset-right));
+  z-index: 7;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(20, 20, 20, 0.78);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+.vsl-entra-pieno svg { width: 22px; height: 22px; display: block; }
+.vsl-entra-pieno:focus-visible { outline: 3px solid #d3ec4f; outline-offset: 2px; }
+.vsl-entra-pieno[hidden] { display: none !important; }
 
 .vsl-frame:fullscreen,
 .vsl-frame:-webkit-full-screen {

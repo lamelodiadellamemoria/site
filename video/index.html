@@ -36,6 +36,7 @@
         <video
           data-lab-vsl="vsl-it-v10i"
           playsinline
+          webkit-playsinline
           preload="none"
           poster="../img/vsl-poster.webp"
           controlslist="nodownload noplaybackrate noremoteplayback"
@@ -60,10 +61,16 @@
             </svg>
           </button>
           <input type="range" class="vsl-volume-slider" data-vsl-volume min="0" max="1" step="0.01" value="1" aria-label="Volume">
+          <p class="vsl-volume-dica" data-vsl-volume-dica hidden>Regola il volume con i tasti del telefono</p>
         </div>
         <button type="button" class="vsl-esci-pieno" data-vsl-esci-pieno hidden aria-label="Chiudi lo schermo intero">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M6.2 6.2l11.6 11.6M17.8 6.2L6.2 17.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button type="button" class="vsl-entra-pieno" data-vsl-entra-pieno hidden aria-label="Schermo intero">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M8 4H4v4M16 4h4v4M8 20H4v-4M16 20h4v-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
         <button type="button" class="vsl-retorno" data-vsl-retorno hidden>
