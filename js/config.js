@@ -40,9 +40,9 @@ var PAYMENT_PLATFORM = 'Hotmart';
    checkout-ficha.md pendência 7). Fica o marcador óbvio até existir o domínio. */
 var SUPPORT_EMAIL = 'contatto@lamelodiadellamemoria.com';
 
-/* Pixel da Meta. Confirmar o ID com o Vini. Não preencher com palpite.
-   Enquanto for o texto PIXEL_ID (ou vazio), o script não chama fbq('init'). */
-var PIXEL_ID = 'PIXEL_ID';
+/* Pixel da Meta. ID confirmado com o Vini.
+   pixel.js só chama fbq('init') e fbq('track','PageView') se o valor for um número. */
+var PIXEL_ID = '3962907623856835';
 
 /* Script de visitas do labofertas (instalacao.script do painel).
    Vazio = não injeta o script. */
