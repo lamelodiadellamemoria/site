@@ -46,7 +46,7 @@ var PIXEL_ID = '3962907623856835';
 
 /* Script de visitas do labofertas (instalacao.script do painel).
    Vazio = não injeta o script. */
-var LAB_SCRIPT_SRC = '';
+var LAB_SCRIPT_SRC = 'https://painel.labofertas.com/api/lp/script?k=3873891ffc9d4485f1bd16154e57f24a';
 
 /* Tempo, em segundos, para o botão de compra aparecer na VSL.
    12:24 = 744 s, início do bloco do preço na v10h (frase / cartela do pulsante).
