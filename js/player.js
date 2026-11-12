@@ -1,4 +1,4 @@
-/* Player da VSL v10i. Sem autoplay. preload="metadata". Uma só VSL visível.
+/* Player da VSL v10i. Sem autoplay. preload="none" até o clique (metadata só se já houver tempo assistido salvo). Uma só VSL visível.
    Todos os textos da interface estão em italiano.
    O bloco de oferta e as seções [data-reveal] aparecem quando o tempo
    realmente assistido (currentTime avançado pela reprodução) chega a
@@ -132,15 +132,13 @@
         sourceEl.type = 'video/mp4';
         video.appendChild(sourceEl);
       }
-      /* Não definir crossorigin: um host externo sem CORS quebraria o play.
-         video.load() faz o player puxar um src novo (relativo ou URL absoluta). */
+      /* Não definir crossorigin: um host externo sem CORS quebraria o play. */
       video.removeAttribute('crossorigin');
-      try { video.load(); } catch (e) {}
     }
     if (vslPoster) video.poster = vslPoster;
     if (window.VSL_NAME) video.setAttribute('data-lab-vsl', window.VSL_NAME);
 
-    video.preload = 'metadata';
+    video.preload = 'none';
     video.removeAttribute('autoplay');
     video.removeAttribute('controls');
     video.controls = false;
@@ -159,6 +157,10 @@
     var saved = lerWatch();
     var watchedMax = saved.t;
     var lastTick = saved.t;
+    if (watchedMax > 0) {
+      video.preload = 'metadata';
+      try { video.load(); } catch (e) {}
+    }
     var restoring = false;
     var playRichiesto = false;
     var iniziato = false;
@@ -332,6 +334,7 @@
     }
 
     function playWithSound() {
+      if (video.preload === 'none') video.preload = 'auto';
       playRichiesto = true;
       iniziato = true;
       awayPaused = false;

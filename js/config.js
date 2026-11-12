@@ -70,11 +70,9 @@ var REPEAT_COOKIE_DAYS = 1;
 var SHOW_CTA_PARAM = 'pid';
 var SHOW_CTA_VALUE = 'vsla2';
 
-/* Fonte do player: VSL v10i (mesma duração e áudio da v10h, 16:9). Sem autoplay. preload metadata.
-   Pode ser caminho relativo à página /video/ ou URL absoluta https://...
-   O player aplica este valor no <source> e não define crossorigin, para o
-   streaming em host externo (Range) não quebrar por CORS. */
-var VSL_VIDEO_SRC = '../media/brainsong_it_vsl_v10h-marca_16x9.mp4';
+/* Fonte do player: VSL v10i no release do GitHub (720p, mesma duração e áudio da v10h).
+   Sem autoplay. preload none até o clique. Sem atributo crossorigin. */
+var VSL_VIDEO_SRC = 'https://github.com/lamelodiadellamemoria/site/releases/download/vsl-v10i/vsl_v10i_720p.mp4';
 var VSL_POSTER = '../img/vsl-poster.webp';
 var VIDEO_SRC = VSL_VIDEO_SRC;
 var VIDEO_POSTER = VSL_POSTER;
